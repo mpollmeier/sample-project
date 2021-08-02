@@ -1,10 +1,12 @@
 name := "sample-project"
-organization := "com.michaelpollmeier"
-scalaVersion := "2.13.6"
+ThisBuild/scalaVersion := "2.13.6"
 
-libraryDependencies ++= Seq(
-  "com.michaelpollmeier" %% "sample-intermediate-dependency" % "0.0.2",
-  "com.michaelpollmeier" %% "sample-intermediate-dependency2" % "0.0.1",
-)
+// libraryDependencies += "com.michaelpollmeier" %% "sample-intermediate-dependency2" % "0.0.1"
+// ThisBuild/libraryDependencies += "com.michaelpollmeier" %% "sample-intermediate-dependency" % "0.0.2"
+libraryDependencies += "com.michaelpollmeier" %% "sample-dependency" % "0.0.2"
+ThisBuild/libraryDependencies += "com.michaelpollmeier" %% "sample-dependency" % "0.0.1"
 
-resolvers += Resolver.mavenLocal
+val subproject1 = project
+dependsOn(subproject1)
+
+ThisBuild/resolvers += Resolver.mavenLocal
