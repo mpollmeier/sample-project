@@ -6,5 +6,3 @@ ThisBuild/libraryDependencies += "com.michaelpollmeier" %% "sample-dependency" %
 
 val subproject1 = project
 dependsOn(subproject1)
-
-ThisBuild/resolvers += Resolver.mavenLocal
